@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fichiers sources\EntryTypes">
+      <UniqueIdentifier>{6893d16e-3d60-43f7-a4bf-d74384eed507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\EntryTypes">
+      <UniqueIdentifier>{e2005ea0-3122-4e36-af16-c64bba666df8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Helper">
+      <UniqueIdentifier>{e648a905-a1f8-40a7-995a-642fc2cfa969}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Helper">
+      <UniqueIdentifier>{767fc48e-3ff3-4a43-837c-0d1208a522dc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="HashArchiveFile.cpp">
+      <Filter>Fichiers sources\EntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="ArchiveFile.cpp">
+      <Filter>Fichiers sources\EntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="HashArchiveHeader.cpp">
+      <Filter>Fichiers sources\EntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DataReader.cpp">
+      <Filter>Fichiers sources\Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="HashEntry.cpp">
+      <Filter>Fichiers sources\EntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Entry.cpp">
+      <Filter>Fichiers sources\EntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>Fichiers sources\EntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Folder.cpp">
+      <Filter>Fichiers sources\EntryTypes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileSystem.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="constant.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="HashArchiveFile.h">
+      <Filter>Fichiers d%27en-tête\EntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="ArchiveFile.h">
+      <Filter>Fichiers d%27en-tête\EntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="HashArchiveHeader.h">
+      <Filter>Fichiers d%27en-tête\EntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DataReader.h">
+      <Filter>Fichiers d%27en-tête\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="HashEntry.h">
+      <Filter>Fichiers d%27en-tête\EntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Entry.h">
+      <Filter>Fichiers d%27en-tête\EntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Folder.h">
+      <Filter>Fichiers d%27en-tête\EntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>Fichiers d%27en-tête\EntryTypes</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
