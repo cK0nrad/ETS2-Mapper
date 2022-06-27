@@ -57,6 +57,9 @@
     <ClCompile Include="Folder.cpp">
       <Filter>Fichiers sources\EntryTypes</Filter>
     </ClCompile>
+    <ClCompile Include="CompressionManager.cpp">
+      <Filter>Fichiers sources\Helper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileSystem.h">
@@ -89,5 +92,11 @@
     <ClInclude Include="File.h">
       <Filter>Fichiers d%27en-tête\EntryTypes</Filter>
     </ClInclude>
+    <ClInclude Include="CompressionManager.h">
+      <Filter>Fichiers d%27en-tête\Helper</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

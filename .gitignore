@@ -33,3 +33,6 @@
 /.vs/
 /x64/Debug
 /ETS2-Mapper/x64/Debug
+/ETS2-Mapper/.vs
+/packages/vcpkg.C.src.vcpkg.1.0.0
+/ETS2-Mapper/packages.config

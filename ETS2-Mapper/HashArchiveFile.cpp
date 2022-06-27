@@ -50,7 +50,6 @@ void HashArchiveFile::Parse(ifstream* stream, FileSystem* filesystem) {
 		);
 
 		if (currentEntry.IsDirectory()) {
-			std::cout << currentEntry.GetHash() << "\n";
 			Folder currentDir = filesystem->GetFolder(currentEntry.GetHash());
 			unsigned char* lines;
 			lines = currentEntry.Read(stream);

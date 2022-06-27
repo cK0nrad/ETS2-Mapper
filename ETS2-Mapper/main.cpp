@@ -16,6 +16,5 @@ int main() {
 	string test = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Euro Truck Simulator 2";
 	files.AddDir(test);
 
-
 	return 0;
 }

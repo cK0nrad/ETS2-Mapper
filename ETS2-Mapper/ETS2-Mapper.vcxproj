@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\vcpkg.C.src.vcpkg.1.0.0\build\native\vcpkg.C.src.vcpkg.props" Condition="Exists('..\packages\vcpkg.C.src.vcpkg.1.0.0\build\native\vcpkg.C.src.vcpkg.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -70,6 +71,13 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnabled>true</VcpkgEnabled>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgUseStatic>true</VcpkgUseStatic>
+    <VcpkgInstalledDir>..\..\..\..\..\src\vcpkg\installed</VcpkgInstalledDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -105,10 +113,12 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\src\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>C:\src\vcpkg\installed\x64-windows\lib\zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -129,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArchiveFile.cpp" />
+    <ClCompile Include="CompressionManager.cpp" />
     <ClCompile Include="DataReader.cpp" />
     <ClCompile Include="Entry.cpp" />
     <ClCompile Include="File.cpp" />
@@ -143,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArchiveFile.h" />
+    <ClInclude Include="CompressionManager.h" />
     <ClInclude Include="constant.h" />
     <ClInclude Include="DataReader.h" />
     <ClInclude Include="Entry.h" />
@@ -153,7 +165,18 @@
     <ClInclude Include="HashArchiveHeader.h" />
     <ClInclude Include="HashEntry.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\vcpkg.C.src.vcpkg.1.0.0\build\native\vcpkg.C.src.vcpkg.targets" Condition="Exists('..\packages\vcpkg.C.src.vcpkg.1.0.0\build\native\vcpkg.C.src.vcpkg.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\vcpkg.C.src.vcpkg.1.0.0\build\native\vcpkg.C.src.vcpkg.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\vcpkg.C.src.vcpkg.1.0.0\build\native\vcpkg.C.src.vcpkg.props'))" />
+    <Error Condition="!Exists('..\packages\vcpkg.C.src.vcpkg.1.0.0\build\native\vcpkg.C.src.vcpkg.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\vcpkg.C.src.vcpkg.1.0.0\build\native\vcpkg.C.src.vcpkg.targets'))" />
+  </Target>
 </Project>
